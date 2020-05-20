@@ -20,7 +20,6 @@ public:
 
     static int threadCount();
     static bool waitForAllDone(int msec);
-    static QList<THttpRequest> readRequest(THttpSocket *socket);
 
 protected:
     void run() override;
@@ -31,6 +30,11 @@ protected:
 
 signals:
     void error(int socketError);
+
+private slots:
+    void processNewRequest();
+    void socketStateChanged();
+    void checkKeepAliveTimeout();
 
 private:
     THttpSocket *_httpSocket {nullptr};

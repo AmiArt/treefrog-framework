@@ -31,6 +31,7 @@ protected slots:
     qint64 writeRawData(const QByteArray &data);
 
 signals:
+    void newRequest();
     void requestWrite(const QByteArray &data);  // internal use
 
 private:

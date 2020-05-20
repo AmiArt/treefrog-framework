@@ -222,9 +222,9 @@ void THttpSocket::readRequest()
             break;
         }
 
-        // if (lengthToRead == 0) {
-        //     emit newRequest();
-        // }
+         if (lengthToRead == 0) {
+             emit newRequest();
+         }
     }
 }
 
